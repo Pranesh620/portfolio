@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--
+  about.html — About Page
+  Tells visitors who you are, your background, and your skills.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn more about Alex Johnson — my story, background, and skills." />
+  <title>About — pranesh</title>
+
+  <!-- Google Fonts (same as index.html for consistency) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION BAR (identical on all pages)
+       TIP: In a real project you'd use a JS template or framework
+       to avoid repeating this. For now, copy-paste is fine!
+       ============================================================ -->
+  <header class="navbar">
+    <div class="container nav-inner">
+
+      <a href="index.html" class="nav-logo" aria-label="Home">
+        pranesh<span>.</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html">Home</a></li>
+        <!-- "active" class highlights the current page link -->
+        <li><a href="about.html" class="active" aria-current="page">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ── PAGE HERO ── -->
+    <!-- A short banner at the top of inner pages -->
+    <section class="page-hero" aria-label="Page heading">
+      <div class="container">
+        <span class="section-label">Get to know me</span>
+        <h1>About Me</h1>
+        <p>Developer by day, curious learner by night. Here's my story.</p>
+      </div>
+    </section>
+
+
+    <!-- ── PERSONAL INTRODUCTION ── -->
+    <section class="about-intro container" aria-label="Personal introduction">
+
+      <!-- Avatar placeholder (left side on desktop) -->
+      <!-- Replace emoji with: <img src="images/profile.jpg" alt="Alex Johnson"> -->
+      <div class="about-avatar" role="img" aria-label="Profile illustration">
+        🙂
+      </div>
+
+      <!-- Text (right side on desktop) -->
+      <div class="about-text">
+        <span class="section-label">My story</span>
+        <h2>Hello, I'm pranesh 👋</h2>
+
+        <p>
+          I'm a self-taught front-end developer based in New York City with a 
+          passion for building beautiful and functional websites. I started coding
+          two years ago and haven't looked back since!
+        </p>
+
+        <p>
+          My journey began with a simple HTML page and has grown into a love for 
+          crafting user experiences that are not only visually appealing but also 
+          accessible and performant. I believe great design and great code go 
+          hand in hand.
+        </p>
+
+        <p>
+          When I'm not coding, you'll find me hiking, reading sci-fi novels, or 
+          experimenting with new recipes in the kitchen.
+        </p>
+
+        <!-- Quick stats row -->
+        <div class="about-stats" role="list" aria-label="Quick facts">
+          <div class="stat" role="listitem">
+            <span class="stat-number">2+</span>
+            <span class="stat-label">Years coding</span>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Projects built</span>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Happy clients</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── SKILLS SECTION ── -->
+    <section class="skills" aria-label="Skills">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">What I know</span>
+          <h2 class="section-title">My Skills</h2>
+          <p>Technologies and tools I work with on a regular basis.</p>
+        </div>
+
+        <!-- Skills grouped by category in a CSS Grid -->
+        <div class="skills-grid">
+
+          <!-- ── Skill Group 1: Frontend ── -->
+          <div class="skill-group">
+            <h3>Frontend</h3>
+
+            <!-- Each skill has a label and a visual progress bar -->
+            <!-- The width of .skill-bar-fill = skill level percentage -->
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>HTML5</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5 proficiency">
+                <div class="skill-bar-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>CSS3 &amp; Flexbox/Grid</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="CSS3 proficiency">
+                <div class="skill-bar-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>JavaScript</span>
+                <span>70%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript proficiency">
+                <div class="skill-bar-fill" style="width: 70%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Responsive Design</span>
+                <span>88%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Responsive Design proficiency">
+                <div class="skill-bar-fill" style="width: 88%;"></div>
+              </div>
+            </div>
+          </div><!-- /skill-group -->
+
+
+          <!-- ── Skill Group 2: Tools ── -->
+          <div class="skill-group">
+            <h3>Tools &amp; Workflow</h3>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Git &amp; GitHub</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Git proficiency">
+                <div class="skill-bar-fill" style="width: 80%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>VS Code</span>
+                <span>92%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="VS Code proficiency">
+                <div class="skill-bar-fill" style="width: 92%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Figma (Design)</span>
+                <span>60%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Figma proficiency">
+                <div class="skill-bar-fill" style="width: 60%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Chrome DevTools</span>
+                <span>78%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="Chrome DevTools proficiency">
+                <div class="skill-bar-fill" style="width: 78%;"></div>
+              </div>
+            </div>
+          </div><!-- /skill-group -->
+
+
+          <!-- ── Skill Group 3: Learning ── -->
+          <div class="skill-group">
+            <h3>Currently Learning</h3>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>React</span>
+                <span>45%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" aria-label="React proficiency">
+                <div class="skill-bar-fill" style="width: 45%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Node.js</span>
+                <span>30%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" aria-label="Node.js proficiency">
+                <div class="skill-bar-fill" style="width: 30%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>TypeScript</span>
+                <span>25%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="TypeScript proficiency">
+                <div class="skill-bar-fill" style="width: 25%;"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Web Accessibility</span>
+                <span>65%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Accessibility proficiency">
+                <div class="skill-bar-fill" style="width: 65%;"></div>
+              </div>
+            </div>
+          </div><!-- /skill-group -->
+
+        </div><!-- /skills-grid -->
+
+      </div>
+    </section>
+
+
+    <!-- ── CTA: Redirect to Contact ── -->
+    <section style="padding-block: 4rem; text-align: center;" aria-label="Call to action">
+      <div class="container">
+        <span class="section-label">Let's connect</span>
+        <h2 class="section-title" style="margin-bottom: 1rem;">Want to work together?</h2>
+        <p style="color: var(--color-muted); max-width: 420px; margin-inline: auto; margin-bottom: 2rem;">
+          I'm currently open to freelance projects and full-time opportunities. Let's chat!
+        </p>
+        <a href="contact.html" class="btn btn-primary">Get In Touch →</a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Designed &amp; built by
+        <a href="index.html">pranesh</a>
+        · 2024 · 
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          GitHub ↗
+        </a>
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Hamburger menu script (same on all pages) -->
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', function () {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+      const isOpen = navToggle.classList.contains('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', false);
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!--
+  contact.html — Contact Page
+  Contains a styled contact form (no backend needed).
+  When submitted, it shows a friendly success message via JavaScript.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with Alex Johnson — send a message, email, or connect on social media." />
+  <title>Contact — Alex Johnson</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+       ============================================================ -->
+  <header class="navbar">
+    <div class="container nav-inner">
+
+      <a href="index.html" class="nav-logo" aria-label="Home">
+        pranesh<span>.</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <!-- "active" marks the current page -->
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+      </ul>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ── PAGE HERO ── -->
+    <section class="page-hero" aria-label="Page heading">
+      <div class="container">
+        <span class="section-label">Don't be shy</span>
+        <h1>Say Hello 👋</h1>
+        <p>Have a project in mind or just want to chat? I'd love to hear from you.</p>
+      </div>
+    </section>
+
+
+    <!-- ── CONTACT SECTION ── -->
+    <section class="contact-section" aria-label="Contact information and form">
+      <div class="container">
+
+        <!-- Two-column layout: info on left, form on right -->
+        <div class="contact-layout">
+
+          <!-- ── LEFT: Contact Info ── -->
+          <div class="contact-info">
+            <span class="section-label">Reach out</span>
+            <h2>Let's Work Together</h2>
+            <p>
+              Whether you have a question, a project idea, or just want to connect —
+              fill out the form or reach me through the info below.
+            </p>
+
+            <!-- Contact info cards -->
+            <div class="contact-cards" role="list">
+
+              <!-- Email card -->
+              <div class="contact-card" role="listitem">
+                <div class="contact-card-icon" aria-hidden="true">📧</div>
+                <div>
+                  <span class="contact-card-label">Email</span>
+                  <!-- Replace with your real email -->
+                  <a href="mailto:singhpranesh425@gmail.com" class="contact-card-value">
+                    singhpranesh425@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <!-- Location card -->
+              <div class="contact-card" role="listitem">
+                <div class="contact-card-icon" aria-hidden="true">📍</div>
+                <div>
+                  <span class="contact-card-label">Location</span>
+                  <span class="contact-card-value">india</span>
+                </div>
+              </div>
+
+              <!-- GitHub card -->
+              <div class="contact-card" role="listitem">
+                <div class="contact-card-icon" aria-hidden="true">💻</div>
+                <div>
+                  <span class="contact-card-label">GitHub</span>
+                  <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="contact-card-value">
+                    github.com/yourusername
+                  </a>
+                </div>
+              </div>
+
+              <!-- LinkedIn card -->
+              <div class="contact-card" role="listitem">
+                <div class="contact-card-icon" aria-hidden="true">🔗</div>
+                <div>
+                  <span class="contact-card-label">LinkedIn</span>
+                  <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="contact-card-value">
+                    linkedin.com/in/yourusername
+                  </a>
+                </div>
+              </div>
+
+            </div><!-- /contact-cards -->
+          </div><!-- /contact-info -->
+
+
+          <!-- ── RIGHT: Contact Form ── -->
+          <div class="contact-form-wrapper">
+            <h3>Send a Message</h3>
+
+            <!--
+              NOTE: This form has NO backend (no server).
+              Submitting it will run our JS below and show a success message.
+              To make it actually send emails, you can use services like:
+              • Formspree (https://formspree.io)  — free & easy
+              • Netlify Forms                      — works with Netlify hosting
+              • EmailJS                            — sends email from JS
+            -->
+            <form id="contactForm" novalidate aria-label="Contact form">
+
+              <!-- Two-column row: Name + Email side by side on desktop -->
+              <div class="form-row">
+
+                <!-- Name field -->
+                <div class="form-group">
+                  <label for="name">
+                    Full Name <span class="required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="John Smith"
+                    required
+                    autocomplete="name"
+                    aria-required="true"
+                  />
+                  <!-- Error message (shown by JS when field is empty) -->
+                  <span class="field-error" id="nameError" role="alert" aria-live="polite"></span>
+                </div>
+
+                <!-- Email field -->
+                <div class="form-group">
+                  <label for="email">
+                    Email Address <span class="required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="john@example.com"
+                    required
+                    autocomplete="email"
+                    aria-required="true"
+                  />
+                  <span class="field-error" id="emailError" role="alert" aria-live="polite"></span>
+                </div>
+
+              </div><!-- /form-row -->
+
+              <!-- Subject field -->
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Project inquiry, collaboration, etc."
+                  autocomplete="off"
+                />
+              </div>
+
+              <!-- Message field -->
+              <div class="form-group">
+                <label for="message">
+                  Message <span class="required" aria-hidden="true">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell me about your project or idea..."
+                  required
+                  aria-required="true"
+                  rows="5"
+                ></textarea>
+                <span class="field-error" id="messageError" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Submit button -->
+              <div class="form-submit">
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                  Send Message ✉️
+                </button>
+              </div>
+
+            </form><!-- /contactForm -->
+
+            <!-- Success message: hidden by default, shown after submission -->
+            <div class="form-success" id="formSuccess" aria-live="polite">
+              <span class="success-icon">🎉</span>
+              Thanks for reaching out! I'll get back to you within 24 hours.
+            </div>
+
+          </div><!-- /contact-form-wrapper -->
+
+        </div><!-- /contact-layout -->
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Designed &amp; built by
+        <a href="index.html">pranesh</a>
+        · 2024 · 
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          GitHub ↗
+        </a>
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       1. Hamburger menu toggle (same as other pages)
+       2. Form validation and submission handler
+       ============================================================ -->
+  <script>
+
+    /* ── Hamburger menu ── */
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', function () {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+      const isOpen = navToggle.classList.contains('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', false);
+      });
+    });
+
+
+    /* ── Contact Form Validation ── */
+
+    // Helper: show an error message below a field
+    function showError(fieldId, errorId, message) {
+      var field = document.getElementById(fieldId);
+      var errorEl = document.getElementById(errorId);
+      field.style.borderColor = '#ef4444';      // Red border
+      errorEl.textContent = message;
+      errorEl.style.display = 'block';
+    }
+
+    // Helper: clear the error state from a field
+    function clearError(fieldId, errorId) {
+      var field = document.getElementById(fieldId);
+      var errorEl = document.getElementById(errorId);
+      field.style.borderColor = '';             // Reset border
+      errorEl.textContent = '';
+      errorEl.style.display = 'none';
+    }
+
+    // Simple email format check using a regex pattern
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // When form is submitted…
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      // Prevent the default browser form submission (which would refresh the page)
+      event.preventDefault();
+
+      // Get field values (trim removes leading/trailing spaces)
+      var name    = document.getElementById('name').value.trim();
+      var email   = document.getElementById('email').value.trim();
+      var message = document.getElementById('message').value.trim();
+
+      // Track whether all fields pass validation
+      var isValid = true;
+
+      // Clear previous errors
+      clearError('name',    'nameError');
+      clearError('email',   'emailError');
+      clearError('message', 'messageError');
+
+      // Validate name
+      if (name === '') {
+        showError('name', 'nameError', 'Please enter your full name.');
+        isValid = false;
+      }
+
+      // Validate email
+      if (email === '') {
+        showError('email', 'emailError', 'Please enter your email address.');
+        isValid = false;
+      } else if (!isValidEmail(email)) {
+        showError('email', 'emailError', 'Please enter a valid email (e.g. you@example.com).');
+        isValid = false;
+      }
+
+      // Validate message
+      if (message === '') {
+        showError('message', 'messageError', 'Please write a message before sending.');
+        isValid = false;
+      }
+
+      // If everything is valid, show the success message
+      if (isValid) {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+        // Note: In a real project, you'd send the data to a server or Formspree here.
+      }
+    });
+
+  </script>
+
+  <!-- Extra styles for field error messages (small, inline) -->
+  <style>
+    .field-error {
+      display: none;
+      font-size: 0.8rem;
+      color: #ef4444;
+      margin-top: 4px;
+    }
+  </style>
+
+</body>
+</html>

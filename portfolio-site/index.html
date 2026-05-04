@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--
+  index.html — Home Page
+  This is the ENTRY POINT of your website.
+  When someone visits your site, this file loads first.
+-->
+<html lang="en">
+
+<head>
+  <!-- ── Meta Tags ── -->
+  <!-- These give browsers and search engines info about your page -->
+  <meta charset="UTF-8" />
+  <!-- UTF-8 supports all characters including accented letters & emojis -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- This makes the page scale correctly on mobile phones -->
+
+  <meta name="description" content="Portfolio of Alex Johnson — Front-End Developer & UI Designer." />
+  <!-- This description shows up in Google search results -->
+
+  <title>Pranesh — Portfolio</title>
+  <!-- Shows in browser tab -->
+
+  <!-- ── Google Fonts ── -->
+  <!-- Syne = distinctive geometric heading font -->
+  <!-- Figtree = clean, modern body font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- ── Main Stylesheet ── -->
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+       <header> = top section of the page (semantic HTML)
+       <nav>    = navigation links area
+       ============================================================ -->
+  <header class="navbar">
+    <div class="container nav-inner">
+
+      <!-- Logo / Site Name (left side) -->
+      <a href="index.html" class="nav-logo" aria-label="Home">
+        pranesh<span>.</span>
+      </a>
+
+      <!-- Hamburger button (visible only on mobile) -->
+      <!-- aria-label and aria-expanded help screen readers -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       MAIN CONTENT
+       <main> wraps the primary content of the page
+       ============================================================ -->
+  <main>
+
+    <!-- ── HERO SECTION ── -->
+    <!-- The first thing visitors see — make it count! -->
+    <section class="hero container" aria-label="Introduction">
+
+      <!-- Left: text content -->
+      <div class="hero-content">
+        <span class="hero-eyebrow">👋 Available for work</span>
+
+        <h1 class="hero-title">
+          Hi, I'm pranesh<br />
+          <span class="highlight">Front-End</span> Dev
+        </h1>
+
+        <p class="hero-description">
+          I build clean, accessible, and user-friendly websites.
+          Turning ideas into beautiful digital experiences is what I love.
+        </p>
+
+        <!-- Call-to-action buttons -->
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            View My Work ↓
+          </a>
+          <a href="contact.html" class="btn btn-outline">
+            Hire Me
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: visual / avatar placeholder -->
+      <!-- Replace the emoji with an <img> tag pointing to your photo! -->
+      <div class="hero-visual">
+        <div class="hero-avatar" role="img" aria-label="Avatar illustration">
+          👨‍💻
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ── PROJECTS SECTION ── -->
+    <!-- id="projects" lets the "View My Work" button scroll here -->
+    <section class="projects" id="projects" aria-label="Projects">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">What I've built</span>
+          <h2 class="section-title">My Projects</h2>
+          <p>A selection of things I've created while learning web development.</p>
+        </div>
+
+        <!-- CSS Grid automatically creates columns based on screen width -->
+        <div class="projects-grid">
+
+          <!-- ── Project Card 1 ── -->
+          <article class="project-card">
+            <!-- Colored image placeholder; replace with <img src="images/project1.png"> -->
+            <div class="project-card-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+              🌦️
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">Weather Dashboard</h3>
+              <p class="project-card-desc">
+                A real-time weather app that displays temperature, humidity,
+                and forecasts for any city.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">API</span>
+              </div>
+              <!-- Update href to your live project or GitHub link -->
+              <a href="#" class="project-card-link" aria-label="View Weather Dashboard project">
+                View Project →
+              </a>
+            </div>
+          </article>
+
+          <!-- ── Project Card 2 ── -->
+          <article class="project-card">
+            <div class="project-card-image" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+              📝
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">Task Manager App</h3>
+              <p class="project-card-desc">
+                A productivity app to create, complete, and delete tasks
+                with local storage so data persists on refresh.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <a href="#" class="project-card-link" aria-label="View Task Manager project">
+                View Project →
+              </a>
+            </div>
+          </article>
+
+          <!-- ── Project Card 3 ── -->
+          <article class="project-card">
+            <div class="project-card-image" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+              🍽️
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">Recipe Finder</h3>
+              <p class="project-card-desc">
+                Search thousands of recipes by ingredient. Displays
+                instructions, cook time, and nutritional info.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">API</span>
+              </div>
+              <a href="#" class="project-card-link" aria-label="View Recipe Finder project">
+                View Project →
+              </a>
+            </div>
+          </article>
+
+        </div><!-- /projects-grid -->
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       <footer> = bottom section of the page (semantic HTML)
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Designed &amp; built by
+        <a href="index.html">pranesh</a>
+        · 2024 · 
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          GitHub ↗
+        </a>
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT — Hamburger Menu Toggle
+       This small script makes the mobile menu open/close.
+       It adds/removes the "open" class which CSS uses to show/hide links.
+       ============================================================ -->
+  <script>
+    // Get references to the button and the nav links list
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+
+    // When the hamburger button is clicked…
+    navToggle.addEventListener('click', function () {
+      // Toggle the "open" class on both elements
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+
+      // Update aria-expanded for accessibility (screen readers)
+      const isOpen = navToggle.classList.contains('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close menu when a nav link is clicked (good UX on mobile)
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', false);
+      });
+    });
+  </script>
+
+</body>
+</html>
